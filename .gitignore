@@ -1,0 +1,13 @@
+# Bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Otros
+*.log
+.DS_Store
