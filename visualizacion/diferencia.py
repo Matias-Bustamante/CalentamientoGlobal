@@ -5,3 +5,4 @@ def ControlDiferencia(dif):
     sns.histplot(dif.days) 
     plt.show() 
 
+

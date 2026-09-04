@@ -20,3 +20,7 @@ def ConvertirDateTimeAIndice(data:pd.DataFrame)->pd.DataFrame:
     data=data.set_index(indice) 
     return data 
 
+def TemperaturaAyD1950(temperatura:pd.Series): 
+    temp_A1950=temperatura[:'1949']["temp_avg"].mean() 
+    temp_D1950=temperatura['1950':]["temp_avg"].mean() 
+    return temp_A1950, temp_D1950

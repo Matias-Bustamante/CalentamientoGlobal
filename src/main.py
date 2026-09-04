@@ -1,9 +1,12 @@
 from lectura.CargaDatos import LeerAPI, LeerExcel, LeerCSV 
 from config.config import VerificarNAN 
-from procesamiento.proc_temperatura import ObtenerColumnas, ObtenerTemperaturaPromedio, EliminarColumnas, ConvertirDateTimeAIndice 
+from procesamiento.proc_temperatura import ObtenerColumnas, ObtenerTemperaturaPromedio, EliminarColumnas, ConvertirDateTimeAIndice, TemperaturaAyD1950 
 from procesamiento.proc_poblacion import FiltrarWorld, PoblacionObtenerColumnas, PoblacionRenombrarColumna, ConvertirASerieDeTiempo
 from procesamiento.proc_dioxido_carbono import CO2EliminarColumna, CO2ConvertirASerieDeTiempo, CO2FiltrarCO2, CO2RenombrarColumna, CO2Remuestrear, Concatenar
-from visualizacion.diferencia import ControlDiferencia 
+from visualizacion.diferencia import ControlDiferencia
+from visualizacion.temperatura import temperatura_promedio, temperatura_promedio_anual
+from visualizacion.poblacion import temp_poblacion 
+from visualizacion.concentracion import temp_concentracion, temp_concentracion_anual
 
 if __name__=='__main__':
     columnas= ['Year','Month', 'AnomalyMonth', 'UncMonth' , 
@@ -69,7 +72,17 @@ if __name__=='__main__':
     co2_2=CO2Remuestrear(co2_2)
     co2=Concatenar(co2_2=co2_2, co2_1=co2_1)
     
-    print(co2)
+    ##Visualización
+    ##temperatura_promedio(temperatura=temperatura, media_movil=12)
+    ##temp_1950=TemperaturaAyD1950(temperatura=temperatura)
+    ##temperatura_promedio_anual(temperatura=temperatura, media_movil=12, anio=10, temp=temp_1950)
+
+    ##temp_poblacion(temp=poblacion)
+
+    ##temp_concentracion(co2)
+    temp_concentracion_anual(co2,10)
+    
+
    
     
     
